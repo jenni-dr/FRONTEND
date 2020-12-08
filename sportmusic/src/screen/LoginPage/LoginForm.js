@@ -6,7 +6,7 @@ import { InputsContainer, LoginFormContainer} from './styled'
 import { useHistory } from 'react-router-dom'
 import useForm from '../../hooks/useForm'
 //import CircularProgress from '@material-ui/core/CircularProgress'
-import { login } from '../../services/user/user'
+import { login } from '../../services/user'
 
 const LoginForm = () => {
   const [form, handleInputChange] = useForm({ email: '', password: ''})

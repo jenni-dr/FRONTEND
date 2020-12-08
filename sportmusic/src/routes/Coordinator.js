@@ -11,11 +11,11 @@ export const goToLogin = (history) => {
   }
   
   export const goToMusicFeed = (history) => {
-    history.push('/music')
+    history.push('/addmusic')
   }
   
-  export const goToAddMusic = (history) => {
-    history.push('/adicionarmusic')
+  export const goToDetailMusic = (history) => {
+    history.push('/music')
   }
   
   export const goToMusicDetail = (history, id) => {

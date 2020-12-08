@@ -6,8 +6,8 @@ import { goToMusicFeed } from '../routes/Coordinator'
 const useUnprotectedPage = () => {
   const history = useHistory()
   useLayoutEffect(() => {
-    const token = localStorage.getItem('token')
-    if (token === true){
+    const token = window.localStorage.getItem('token')
+    if (!token){
      goToMusicFeed(history)
     }
   }, [history])

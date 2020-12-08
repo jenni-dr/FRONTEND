@@ -1,86 +1,87 @@
-import React  from 'react'
+import React from 'react'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import { InputsContainer, SignUpFormContainer} from './styled'
+import { InputsContainer, AddRecipeFormContainer} from './styled'
 import { useHistory } from 'react-router-dom'
-import { signUp } from '../../services/user'
 import useForm from '../../hooks/useForm'
 
-const SignUpForm = () => {
-  const history = useHistory()
-  const [form, handleInputChange] = useForm({name: '', email: '', password: '',nickname:"",})
-  
+import { addMusic} from '../../services/music'
 
-  const onClickSignUp = (event) => {
+const MusicFeedForm = () => {
+  const history = useHistory()
+  const [form, handleInputChange] = useForm({
+    title: '', 
+    file: '', 
+    genresIds:[], 
+    albumId:''
+  })
+ 
+
+  const onClickCreateMusic = (event) => {
     event.preventDefault()
-    signUp(form, history)
+    addMusic(form,history)
     }
   
 
   return (
     <form >
-      <SignUpFormContainer>
+      <AddRecipeFormContainer>
         <InputsContainer>
           <TextField
-            value={form.name}
-            name={'name'}
+            value={form.title}
+            name={'title'}
             onChange={handleInputChange}
-            label={'Name'}
+            label={'title'}
             variant={'outlined'}
             fullWidth
             required
             autoFocus
             margin={'normal'}
           />
-
-          
           <TextField
-            value={form.email}
-            name={'email'}
+            value={form.file}
+            name={'file'}
             onChange={handleInputChange}
-            label={'E-mail'}
+            label={'file'}
             variant={'outlined'}
-            type={'email'}
             fullWidth
             required
             margin={'normal'}
           />
           <TextField
-            value={form.password}
-            name={'password'}
+            value={form.genresIds}
+            name={'genresIds'}
             onChange={handleInputChange}
-            label={'Senha'}
+            label={'genresIds'}
             variant={'outlined'}
-            type={'password'}
             fullWidth
             required
             margin={'normal'}
           />
           <TextField
-            value={form.nickname}
-            name={'nickname'}
+            value={form.albumId}
+            name={'albumId'}
             onChange={handleInputChange}
-            label={'NickName'}
+            label={'albumId'}
             variant={'outlined'}
             fullWidth
             required
-            autoFocus
             margin={'normal'}
           />
         </InputsContainer>
         <Button
-          onClick={onClickSignUp}
+          onClick={onClickCreateMusic}
           color={'primary'}
           variant={'contained'}
           type={'submit'}
           fullWidth
           margin={'normal'}
         >
-         Fazer Cadastro
+         Adicionar Musica
         </Button>
-      </SignUpFormContainer>
+      </AddRecipeFormContainer>
     </form>
   )
 }
 
-export default SignUpForm
+export default MusicFeedForm

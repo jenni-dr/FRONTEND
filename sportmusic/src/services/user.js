@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { BASE_URL } from '../../constants/urls'
-import { goToMusicFeed } from '../../routes/Coordinator'
+import { BASE_URL } from '../constants/urls'
+import { goToMusicFeed } from '../routes/Coordinator'
 
 
 export const login = (body, history) => {
