@@ -1,27 +1,29 @@
 import React from 'react'
-import MusicLogo from '../../assets/music3.png'
+import MusicLogo from '../../assets/musics.png'
 import Button from '@material-ui/core/Button'
-import { LogoImage, ScreenContainer, SignUpButtonContainer } from './styled'
+import {Leter, LogoImage, ScreenContainer, SignUpButtonContainer } from './styled'
 import LoginForm from './LoginForm'
 import { useHistory } from 'react-router-dom'
 import { goToSignUp } from '../../routes/Coordinator'
-import useUnprotectedPage from '../../hooks/useUnprotectedPage'
-//import useProtectedPage from '../../hooks/useProtectedPage'
+//import useUnprotectedPage from '../../hooks/useUnprotectedPage'
+import MainAppBar from '../../components/AppBar/MainAppBar'
+
 
 const LoginPage = () => {
   const history = useHistory()
-  useUnprotectedPage()
+  //useUnprotectedPage()
   return (
-    <ScreenContainer>
-      <LogoImage  alt={LogoImage} src={MusicLogo} />
-
-     
-      
+  <ScreenContainer>
+      <MainAppBar/>
+      <Leter>
+        <LogoImage  alt={LogoImage} src={MusicLogo} />
+          Sport <br></br>Music
+      </Leter>
       <LoginForm />
       <SignUpButtonContainer>
         <Button
           onClick={() => goToSignUp(history)}
-          color={'primary'}
+          color={'secondary'}
           variant={'text'}
           type={'submit'}
           fullWidth

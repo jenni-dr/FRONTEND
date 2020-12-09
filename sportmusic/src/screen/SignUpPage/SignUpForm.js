@@ -1,7 +1,7 @@
 import React  from 'react'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import { InputsContainer, SignUpFormContainer} from './styled'
+import { InputText,Botão,InputsContainer, SignUpFormContainer} from './styled'
 import { useHistory } from 'react-router-dom'
 import { signUp } from '../../services/user'
 import useForm from '../../hooks/useForm'
@@ -21,7 +21,7 @@ const SignUpForm = () => {
     <form >
       <SignUpFormContainer>
         <InputsContainer>
-          <TextField
+          <InputText
             value={form.name}
             name={'name'}
             onChange={handleInputChange}
@@ -34,7 +34,7 @@ const SignUpForm = () => {
           />
 
           
-          <TextField
+          <InputText
             value={form.email}
             name={'email'}
             onChange={handleInputChange}
@@ -45,7 +45,7 @@ const SignUpForm = () => {
             required
             margin={'normal'}
           />
-          <TextField
+          <InputText
             value={form.password}
             name={'password'}
             onChange={handleInputChange}
@@ -56,7 +56,7 @@ const SignUpForm = () => {
             required
             margin={'normal'}
           />
-          <TextField
+          <InputText
             value={form.nickname}
             name={'nickname'}
             onChange={handleInputChange}
@@ -68,16 +68,14 @@ const SignUpForm = () => {
             margin={'normal'}
           />
         </InputsContainer>
-        <Button
+        <Botão
           onClick={onClickSignUp}
-          color={'primary'}
-          variant={'contained'}
           type={'submit'}
           fullWidth
           margin={'normal'}
         >
          Fazer Cadastro
-        </Button>
+        </Botão>
       </SignUpFormContainer>
     </form>
   )

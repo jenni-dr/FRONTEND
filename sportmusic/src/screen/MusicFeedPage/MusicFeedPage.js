@@ -1,19 +1,21 @@
 import React from 'react'
 import useProtectedPage from '../../hooks/useProtectedPage'
-import { RecipeContainer, ScreenContainer } from './styled'
-import Typography from '@material-ui/core/Typography'
+import {Leter,LogoImage, RecipeContainer, ScreenContainer } from './styled'
 import MusicFeedForm from './MusicFeedForm'
+import MusicLogo from '../../assets/musics.png'
 
 const MusicFeedPage = () => {
   useProtectedPage()
   return (
     <ScreenContainer>
       <RecipeContainer>
-        <Typography gutterBottom variant={'h4'} align={'center'} color={'textPrimary'}>Adicionar Nova Musica</Typography>
+      <Leter>
+        <LogoImage  src={MusicLogo} alt={LogoImage}  />
+         Adicione <br></br>sua<br></br>Musica
+      </Leter>
         <MusicFeedForm/>
       </RecipeContainer>
     </ScreenContainer>
   )
 }
-
 export default MusicFeedPage

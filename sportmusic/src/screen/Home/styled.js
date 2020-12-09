@@ -1,65 +1,47 @@
 import styled from 'styled-components'
-import Toolbar from '@material-ui/core/Toolbar'
 
 
-export const  Menu = styled(Toolbar)`
-  display:flex;
-  justify-content:center;
+export const Container =styled.div`
+  margin:0px;
+  padding:0px;
+  display: flex;
   flex-direction: column; 
+  justify-content:center;
+  align-items:center;
+`
+export const  Menu = styled.div`
   text-align:center;
-  
- 
- 
 `
 export const Imagem = styled.img`
-  width:20vw;
+  margin-top:20px;
+  width:40vw;
   max-width:70px;
-  
 `
 export const Oi = styled.div`
   display:flex;
-  
-  
 `
-
 export const Footer = styled.img`
   display:flex;
   width:20vw;
   max-width:50px;
   margin-top: 50px;
-  padding:10px;
-  
+  padding:10px;  
 `
 export const Leter = styled.h2`
   font-family:MingLiU_HKSCS-ExtB;
+  color:white;
 `
-
-// export const Botão =styled(Button)`
-//   align-items:center;
-//   width: 80vw;
-//   max-width: 450px;
-//   margin-top:500px;
-//   display: flex;
-//   flex-direction: column;
-// justify-content:center;
-  
-  
-//   `   
-
-
-
-export const Containe =styled.div`
-   width: 80vw;
-  max-width: 450px;
-  margin-top: 200px;
-  display: flex;
-  flex-direction: column; 
-  justify-content:center;
-  align-items:center;
- 
-  
- 
- 
- 
-  
-`
+export const Botão =styled.button`
+ max-width: 450px;
+  border-radius:15px;
+  width:200px;
+  height:40px;
+  margin-top:50px;
+  margin-right:700px;
+  margin-left:700px;
+  margin-top:80px;
+  background-color:#0099cc;
+  font-family:MingLiU_HKSCS;
+  font-size:20px;
+  color:white;
+`   
