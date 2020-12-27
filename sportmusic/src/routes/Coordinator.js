@@ -14,11 +14,28 @@ export const goToLogin = (history) => {
     history.push('/addmusic')
   }
   
-  export const goToDetailMusic = (history) => {
-    history.push('/music')
+  export const goToMusicList = (history,id) => {
+    history.push(`/music`)
   }
   
   export const goToMusicDetail = (history, id) => {
     history.push(`/music/${id}`)
   }
+  
+  export const goToPlaylist = (history) => {
+    history.push('/playlist')
+  }
+
+  export const goToGenero = (history) => {
+    history.push('/genero')
+  }
+
+  export const goToAlbum = (history) => {
+    history.push('/album')
+  }
+  
+  export const goToArtist = (history) => {
+    history.push('/artist')
+  }
+ 
   

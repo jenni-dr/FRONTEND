@@ -1,12 +1,7 @@
 import React from 'react'
-
-
 import Router from './routes/Router'
 import { BrowserRouter } from 'react-router-dom'
 import styled from 'styled-components'
-//import MainAppBar from './components/AppBar/MainAppBar'
-
-//import Header from './components/Header'
 
 const InnerScreenContainer = styled.div`
   width: 100vw;
@@ -14,25 +9,17 @@ const InnerScreenContainer = styled.div`
   background-color:black;
   display: flex;
   flex-direction: column;
- 
- 
- 
 `
 
 const App = () => {
   return( 
-  <BrowserRouter>
-      {/* <MainAppBar /> */}
-      <InnerScreenContainer>
-          
-          <Router />
-        </InnerScreenContainer>
-      </BrowserRouter>
+    <BrowserRouter>
+    <InnerScreenContainer>
+      <Router/>
+    </InnerScreenContainer>
+    </BrowserRouter>
     
   )
 }
-  
-
-
 export default App
 

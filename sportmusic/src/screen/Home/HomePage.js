@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import {Menu,Imagem ,Leter,Container,Footer,Oi,Botão} from './styled'
+import {Menu,Imagem ,Leter,Container,Footer,MenuFooter,Botão} from './styled'
 import Music from '../../assets/musics.png'
 import Facebook from '../../assets/facebook.png'
 import Instagram from '../../assets/instagram.png'
@@ -21,11 +21,11 @@ const HomePage = () => {
       <Botão onClick={() => goToLogin(history)}>Login</Botão>
       <Botão onClick={() => goToSignUp(history)}>Cadastre-se
       </Botão>
-      <Oi> 
+      <MenuFooter> 
         <Footer src={Facebook}   alt={'Music'}/>
         <Footer src={Instagram} alt={'Music'}/>
         <Footer src={Twitter} alt={'Music'}/>
-     </Oi>
+     </MenuFooter>
     </Container>
   )
 }

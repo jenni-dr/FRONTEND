@@ -1,30 +1,21 @@
 import styled from 'styled-components'
-import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent'
-import Fab from '@material-ui/core/Fab'
 
-export const RecipeCardContainer = styled(Card)`
-  width: 250px;
-  margin: 10px
-`
-
-export const RecipeCardContent = styled(CardContent)`
+export const ScreenContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-`
-
-export const FeedContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   margin: 30px;
 `
-
-export const AddRecipeButton = styled(Fab)`
-  position: fixed !important;
-  right: 20px;
-  bottom: 20px;
-  z-index: 3;
+export const MusicContainer = styled.div`
+  justify-content:center;
+  width: 300px;
+  height:30vh;
+  margin: 25px;
+  text-align:center;
 `
+export const MusicControler= styled.audio`
+  width: 200px;
+  margin-top:20px;
+  margin-left:50px;
+`
+

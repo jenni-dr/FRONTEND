@@ -8,9 +8,9 @@ export const ScreenContainer = styled.div`
   width: 100vw;
 `
  export const InputText = styled(TextField)`
- background:#0099cc;
- color: white;
- border-radius:15px ;
+  background:#0099cc;
+  color: white;
+  border-radius:15px ;
  `
 export const Botão = styled.button`
   max-width: 450px;

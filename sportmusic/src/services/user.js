@@ -8,7 +8,7 @@ export const login = (body, history) => {
       .then((response) => {
         localStorage.setItem('token', response.data.token)
         goToMusicFeed(history)
-        console.log(response)
+        console.log(response.data)
         })
       .catch((error) => {
         console.log(error)
@@ -20,6 +20,7 @@ export const login = (body, history) => {
   export const signUp = (body, history) => {
     axios.post(`${BASE_URL}/user/signup`, body)
       .then((response)=>{
+        console.log(response.data)
         localStorage.setItem('token', response.data.token)
         goToMusicFeed(history)
         })

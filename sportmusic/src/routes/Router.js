@@ -5,8 +5,13 @@ import LoginPage from '../screen/LoginPage/LoginPage'
 import SignUpPage from '../screen/SignUpPage/SignUpPage'
 import MusicFeedPage from '../screen/MusicFeedPage/MusicFeedPage'
 import HomePage from '../screen/Home/HomePage'
+import MusicFeedList from '../screen/MusicFeedList/MusicFeedList'
 import MusicFeedDetail from '../screen/MusicFeedDetail/MusicFeedDetail'
-//import ErrorPage from '../screens/ErrorPage/ErrorPage'
+import PlaylistPage from '../screen/Playlist/PlaylistPage'
+import GeneroPage from '../screen/Genero/GeneroPage'
+import AlbumPage from '../screen/Album/AlbumPage'
+import ArtistPage from '../screen/Artist/ArtistPage'
+
 
 const Router = (props) => {
   return(
@@ -24,19 +29,27 @@ const Router = (props) => {
           <MusicFeedPage/>
         </Route>
         <Route exact path={'/music'}>
+          <MusicFeedList/>
+        </Route>
+         <Route exact path={'/music/:id'}>
           <MusicFeedDetail/>
         </Route>
-        {/* <Route exact path={'/music/:id'}>
-          <MusicDetailPage/>
+        <Route exact path={'/playlist'}>
+          <PlaylistPage/>
         </Route>
-        <Route exact path={'/adicionarMusic'}>
-          <AddMusicPage/>
-        </Route> */} 
+        <Route exact path={'/genero'}>
+          <GeneroPage/>
+        </Route>
+        <Route exact path={'/album'}>
+          <AlbumPage/>
+        </Route>
+        <Route exact path={'/artist'}>
+          <ArtistPage/>
+        </Route>
         <Route>
           <ErrorPage/> 
         </Route> 
       </Switch>
   )
 }
-
 export default Router

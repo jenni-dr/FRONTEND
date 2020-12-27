@@ -1,111 +1,99 @@
-import React from 'react'
-import { MenuItem } from '@material-ui/core'
+import React  from 'react'
 import { useHistory } from 'react-router-dom'
 import useForm from '../../hooks/useForm'
-import {Selet, InputText,Botão,InputsContainer, MusicFormContainer} from './styled'
+import {Botão} from './styled'
+import { Container,PostContainer,InputPost} from './styled'
+import { addMusic } from '../../services/music'
 
 
 const MusicFeedForm = () => {
   const history = useHistory()
-  const [form, handleInputChange] = useForm({title: '', author: '', date: '', file:"", genre:"",album:""})
+  const [form, handleInputChange] = useForm({title: '', author: '',date:'', file:'', genre:[],album:''})
   
-
-  // const onClickAddMusic = (event) => {
-  //   event.preventDefault()
-  //   const element = document.getElementById('addrecipe_form')
-  //   const isValid = element.checkValidity()
-  //   element.reportValidity()
-  //   if (isValid) {
-  //     addRecipe(form, history, setIsLoading)
-  //   }
-  // }
+  const onClickAddMusic = (event) => {
+    event.preventDefault()
+    const element = document.getElementById('music_form')
+    const isValid = element.checkValidity()
+    element.reportValidity()
+    if (isValid) {
+      addMusic(form, history)
+    }
+  }
   return (
-    <form>
-      <MusicFormContainer>
-        <InputsContainer>
-          <InputText
+    <form id={'music_form'} >
+      <Container>
+        <PostContainer>
+          <InputPost
             value={form.title}
             name={'title'}
             onChange={handleInputChange}
-            label={'Title'}
+            label={'Titulo'}
             variant={'filled'}
-            fullWidth
             required
             autoFocus
             margin={'normal'}
           />
-          <InputText
+          <InputPost
             value={form.author}
             name={'author'}
             onChange={handleInputChange}
             label={'Author'}
             variant={'filled'}
-            type={'text'}
-            fullWidth
             required
             margin={'normal'}
           />
-          <InputText
+           <InputPost
             value={form.date}
-            name={'password'}
+            name={'date'}
             onChange={handleInputChange}
             variant={'filled'}
             type={'date'}
+            min="YYYY-MM-DD"
             fullWidth
-            required
+            required={true}
             margin={'normal'}
           />
-          <InputText
+          <InputPost
+            style={{ color:"white" }}
             value={form.file}
             name={'file'}
             onChange={handleInputChange}
             label={'Url'}
             variant={'filled'}
-            fullWidth
+            required={true}
+            autoFocus
+            margin={'normal'}
+          />
+           <InputPost
+            value={form.genre}
+            name={'genre'}
+            onChange={handleInputChange}
+            label={'Gênero'}
+            variant={'filled'}
             required
             autoFocus
             margin={'normal'}
           />
-          <Selet
-            label="Genero"
-            value={form.genre}
-            onChange={handleInputChange}
-            variant="outlined"
-          >
-            <MenuItem value=""></MenuItem>
-            <MenuItem value="Pop">Pop</MenuItem>
-            <MenuItem value="Rock">Rock</MenuItem>
-            <MenuItem value="Kpop">Kpop</MenuItem>
-            <MenuItem value="Sertanejo">Sertanejo</MenuItem>
-            <MenuItem value="Gospel">Gospel</MenuItem>
-            <MenuItem value="Samba">Samba</MenuItem>
-            <MenuItem value="Country">Country</MenuItem>
-            <MenuItem value="Música Clássica">Música Clássica</MenuItem>
-            <MenuItem value="Funk">Funk</MenuItem>
-            <MenuItem value="Eletrônica">Eletrônica</MenuItem>
-            <MenuItem value="Jazz">Jazz</MenuItem>
-            <MenuItem value="MPB">MPB</MenuItem>
-          </Selet>
-          <InputText
+          <InputPost
             value={form.album}
-            name={'file'}
+            name={'album'}
             onChange={handleInputChange}
             label={'Album'}
             variant={'filled'}
-            fullWidth
             required
             autoFocus
             margin={'normal'}
           />
-        </InputsContainer>
+        </PostContainer>
         <Botão
+          onClick={onClickAddMusic}
           type={'submit'}
           fullWidth
           margin={'normal'}
         >
          Adicionar
         </Botão>
-      </MusicFormContainer>
+      </Container>
     </form>
   )
 }

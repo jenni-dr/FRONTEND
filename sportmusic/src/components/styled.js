@@ -1,16 +1,27 @@
 import styled from 'styled-components'
-import Toolbar from '@material-ui/core/Toolbar'
 
-export const  Menu = styled(Toolbar)`
-  display:flex;
-  justify-content:center;
+export const ButtonsContainer = styled.div`
+  display: flex;
 `
+export const Menu = styled.div`
+  width: 100vw;
+`
+export const ButtonMenu = styled.div`
+  margin-top:20px;
+  display:flex;
+  align-items:center;
+`
+export const AddMenu = styled.div`
+  margin-left:100px;
+`
+
 export const Imagem = styled.img`
-  width:10vw;
-  max-width:70px;
-  margin-top:8px;
-  margin-bottom:5px;
+  width:20vw;
+  max-width:50px;
 `
 export const Leter = styled.h2`
-font-family:MingLiU_HKSCS-ExtB;
+  margin-left:40px;
+  font-family:MingLiU_HKSCS-ExtB;
+  font-size:18px;
+  color:white;
 `

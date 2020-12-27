@@ -1,64 +1,32 @@
-import axios from 'axios'
-import React, {useEffect, useState} from 'react'
-import useProtectedPage from '../../hooks/useProtectedPage'
-import { useHistory } from 'react-router-dom'
-import { AddRecipeButton, FeedContainer } from './styled'
-//import useRequestData from '../../hooks/useRequestData'
-import MusicCard from './MusicCard'
-import { Add } from '@material-ui/icons'
-import Loading from '../../components/Loading/Loading'
-import { goToMusicFeed } from '../../routes/Coordinator'
+import React from 'react'
+import { Typography } from '@material-ui/core'
+import { useParams } from 'react-router-dom'
+import MainAppBar from '../../components/AppBar/MainAppBar'
+import useUnprotectedPage from '../../hooks/useUnprotectedPage'
+import { MusicContainer, ScreenContainer, MusicControler } from './styled'
+import useRequestData from '../../hooks/useRequestData'
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
-const MusicFeedDetail = () => {
-    useProtectedPage()
-    const history = useHistory()
-    const [music ,setMusic] = useState([])
+const MusicFeddDetail = () => {
+    useUnprotectedPage()
+    const {id} = useParams()
+    const music = useRequestData ([], `/music/${id}`)
+  return( 
+  <div>
+    <MainAppBar/>
+    <ScreenContainer>
+        <MusicContainer>
+            <Typography gutterBottom align={'center'} variant={'h5'} style={{ color:"white"}} >{music.title}</Typography>
+            <Typography  style={{ color:"white"}}  >{music.author}</Typography>
+            <MusicControler 
+              autoplay="autoplay" controls="controls">
+              <source src={music.file} type="audio/mp3" />
+            </MusicControler>
+            <DeleteForeverIcon style={{ color:"red"}}  fontSize="large"  />
+        </MusicContainer>
+    </ScreenContainer>
+  </div>
+  )
+}
+export default MusicFeddDetail
 
-
-    const getListMusic = () =>{
-        axios
-           .get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/jennifer/trips`)
-          
-           .then((response)=> {
-             setMusic(response.data.trips)
-             console.log(response)
-           })
-           .catch((err)=> {
-             console.log(err)
-           });
-         }
-         useEffect(() => {
-           getListMusic()
-         }, [])
-        
-  
-    const renderMusic = () => { 
-      music.map((item) => {
-        return (
-          <MusicCard
-            key={item.id}
-            //onClick={() => goToRecipeDetail(history, item.recipe_id)}
-            title={item.title}
-            author={item.author}
-            date={item.date}
-            file={item.file}
-          />
-        )
-      })
-    }
-  
-    return (
-      <>
-        <FeedContainer>
-          {music.length > 0 ? renderMusic() : <Loading/>}
-        </FeedContainer>
-        <AddRecipeButton color={'primary'} onClick={() => goToMusicFeed(history)}>
-          <Add/>
-        </AddRecipeButton>
-  
-      </>
-    )
-  }
-  
-  export default MusicFeedDetail
-  

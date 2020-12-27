@@ -5,20 +5,19 @@ import {Leter, LogoImage, ScreenContainer, SignUpButtonContainer } from './style
 import LoginForm from './LoginForm'
 import { useHistory } from 'react-router-dom'
 import { goToSignUp } from '../../routes/Coordinator'
-//import useUnprotectedPage from '../../hooks/useUnprotectedPage'
-import MainAppBar from '../../components/AppBar/MainAppBar'
+import useUnprotectedPage from '../../hooks/useUnprotectedPage'
+
 
 
 const LoginPage = () => {
   const history = useHistory()
-  //useUnprotectedPage()
+  useUnprotectedPage()
   return (
   <ScreenContainer>
-      <MainAppBar/>
-      <Leter>
+    <Leter>
         <LogoImage  alt={LogoImage} src={MusicLogo} />
           Sport <br></br>Music
-      </Leter>
+    </Leter>
       <LoginForm />
       <SignUpButtonContainer>
         <Button

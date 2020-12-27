@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 
 export const Container =styled.div`
-  margin:0px;
+  margin:30px;
   padding:0px;
   display: flex;
   flex-direction: column; 
@@ -14,10 +14,10 @@ export const  Menu = styled.div`
 `
 export const Imagem = styled.img`
   margin-top:20px;
-  width:40vw;
-  max-width:70px;
+  width:50vw;
+  max-width:100px;
 `
-export const Oi = styled.div`
+export const MenuFooter = styled.div`
   display:flex;
 `
 export const Footer = styled.img`

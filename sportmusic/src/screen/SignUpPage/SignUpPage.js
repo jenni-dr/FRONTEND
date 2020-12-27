@@ -3,16 +3,14 @@ import MusicLogo from '../../assets/musics.png'
 import { ScreenContainer } from './styled'
 import SignUpForm from './SignUpForm'
 import {Leter, LogoImage } from './styled'
-import MainAppBar from '../../components/AppBar/MainAppBar'
-//import useUnprotectedPage from '../../hooks/useUnprotectedPage'
+import useUnprotectedPage from '../../hooks/useUnprotectedPage'
 
 
 const SignUpPage = () => {
-  //useUnprotectedPage()
+  useUnprotectedPage()
   return (
     <ScreenContainer>
-      <MainAppBar/>
-      <Leter> 
+     <Leter> 
         <LogoImage alt={LogoImage} src={MusicLogo}/>
           Sport <br></br>Music
       </Leter>

@@ -5,13 +5,16 @@ import Typography from '@material-ui/core/Typography'
 export const ButtonsContainer = styled.div`
   display: flex;
   flex-grow: 1;
-  justify-content: space-between;
+  justify-content:flex-end;
 `
 export const AppBarTitle = styled(Typography)`
   padding-left: 16px;
 `
 export const Menu = styled.div`
-  margin-top:10px;
-  background:black;
+  background:#0099cc;
   width: 100vw;
+`
+export const MenuApp = styled.div`
+  display:flex;
+  justify-content:space-between;
 `

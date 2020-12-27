@@ -1,51 +1,36 @@
-import {  Select, TextField } from '@material-ui/core'
 import styled from 'styled-components'
+import { Select, TextField } from '@material-ui/core'
 
-export const ScreenContainer = styled.div`
+
+ export const ScreenContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
-`
+ `
 export const RecipeContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
-export const InputsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 65vw;
-  max-width: 300px;
-  align-items: center;
-  margin-bottom: 10px;
-`
-export const MusicFormContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 65vw;
-  max-width: 300px;
-`
-export const InputText = styled(TextField)`
-  background:#0099cc;
-  border-radius:15px ;
-`
-// export const Title = styled.p`
-// color:white;
-// `
+  
+ `
 export const Selet = styled(Select)`
-  background:#0099cc;
-  border-radius:15px ;
   margin-top:10px;
-  width:150px;
+  height: 40px;
+  font-size: 10px;
+  width: 50vw;
+  max-width:200px;
+  border: 1px solid #6699ff;
+  margin-bottom: 1em;
+  padding-left: 0.5em;
+  background:#0099cc;
 `
 export const Botão = styled.button`
   max-width: 450px;
   border-radius:15px;
-  width:200px;
+  width:150px;
   height:40px;
-  margin-top:10px;
+  margin-top:80px;
   margin-right:700px;
   margin-left:700px;
   background-color:#0099cc;
@@ -63,3 +48,38 @@ export const LogoImage = styled.img`
   width: 20vw;
   max-width: 100px;
 `
+
+export const Container = styled.div`
+  width:80vw;
+  height:75vh;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  
+`
+export const InputPost = styled(TextField)`
+  height:50px;
+  font-size: 10px;
+  width: 70vw;
+  max-width:350px;
+  border: 1px solid #6699ff;
+  margin-bottom: 1em;
+  padding-left: 0.5em;
+  background-color:#0099cc;
+  border-radius:15px;
+`
+export const PostContainer = styled.div`
+  margin-top:40px;
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
+  width: 80vw;
+  max-width:200px;
+  height: 15em;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  text-align:center;
+`  

@@ -11,5 +11,4 @@ const ErrorPage = () => {
     </ErrorPageContainer>
   )
 }
-
 export default ErrorPage
