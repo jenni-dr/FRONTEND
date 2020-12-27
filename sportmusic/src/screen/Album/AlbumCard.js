@@ -4,7 +4,7 @@ import {CardFoto,CardAlbums,CardActionAlbum} from './styled';
 
 
 const AlbumCard = (props) =>{
-    return(
+    return( 
     <CardAlbums >
       <CardActionAlbum>
         <CardFoto>
